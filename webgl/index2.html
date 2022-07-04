@@ -2,7 +2,7 @@
     <style> body { margin: 0; } </style>
   
     <script src="//unpkg.com/3d-force-graph-vr"></script>
-    <!-- <script src="js/3d-force-graph-vr.js"></script> -->
+   <!-- <script src="js/3d-force-graph-vr.js"></script> -->
   </head>
   
   <body>
@@ -11,7 +11,7 @@
     <script>
       const Graph = ForceGraphVR()
         (document.getElementById('3d-graph'))
-          .jsonUrl('datasets/flow-modules.json')
+        .jsonUrl('datasets/flow-modules-no-links.json')
           .nodeLabel('name')
           .nodeAutoColorBy('group');
     </script>
