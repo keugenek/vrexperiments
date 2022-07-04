@@ -1,0 +1,3 @@
+glean query --repo react/0 --db-root /glean-demo/db --schema /glean-demo/schema/source/ 'M where flow.Module { file=M }'
+flow.ImportDeclaration { declaration = { loc = { module = { file = "packages/react-native-renderer/src/ReactNativeBridgeEventPlugin.js" } }  } }
+glean query --repo react/0 --db-root /glean-demo/db --schema /glean-demo/schema/source/ '{F1,F2} where flow.ImportDeclaration { declaration = { loc = { module = { file = F1 } } }, import_ = { moduleExport =  {module = { file = F2 }} } }' | more
