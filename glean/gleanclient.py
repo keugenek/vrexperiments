@@ -5,7 +5,9 @@ with open('flow-facts.json') as f:
     lines = f.readlines()
     for line in lines:
          line_dict = json.loads(line)
-         nodes.append({ 'id': line_dict['id'], 'name': line_dict['key'], 'value': 0  })
+         line_dict['fname'] = line_dict['key'].split('/')[-1]
+         line_dict['folder'] = line_dict['key'][:-len('/'+line_dict['fname'])]
+         nodes.append({"id": line_dict['id'], "fname": line_dict['fname'], "folder": line_dict['folder']})
 
 edges = []
 with open('flow-imports.json') as f:

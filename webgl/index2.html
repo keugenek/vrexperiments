@@ -13,6 +13,7 @@
         (document.getElementById('3d-graph'))
         .jsonUrl('datasets/flow-modules.json')
         .nodeAutoColorBy('folder')
-        .nodeLabel(node => `${node.fname}`);
+        .nodeLabel(node => `${node.fname}`)
+        .nodeDescription(node => `${node.folder}`);
     </script>
   </body>
