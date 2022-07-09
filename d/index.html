@@ -2,6 +2,7 @@
     <style> body { margin: 0; } </style>
   
     <script src="//unpkg.com/3d-force-graph-vr"></script>
+    <script src="//unpkg.com/three-spritetext"></script>
   </head>
   
   <body>
@@ -12,7 +13,12 @@
         (document.getElementById('3d-graph'))
         .jsonUrl('datasets/flow-modules.json')
         .nodeAutoColorBy('folder')
-        .nodeLabel(node => `${node.fname}`)
-        .nodeDescription(node => `${node.folder}`);
+        //.nodeLabel(node => `${node.fname}\n${node.folder}`)
+        .nodeThreeObject(node => {
+          const sprite = new SpriteText(node.fname);
+          sprite.color = node.color;
+          sprite.textHeight = 8;
+          return sprite;
+        });
     </script>
   </body>
